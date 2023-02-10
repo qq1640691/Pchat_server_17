@@ -16,7 +16,7 @@ public class receivepacket extends Thread{
 
     @Override
     public void run() {
-        while (true)
+        while (!Thread.currentThread().isInterrupted())
         {
             byte[] get = new byte[1024];
             DatagramPacket packet = new DatagramPacket(get, get.length);
